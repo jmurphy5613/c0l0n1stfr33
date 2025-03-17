@@ -2,6 +2,7 @@ import { BoardPieceData, BoardPieceType } from "@/models/GameTypes";
 
 interface BoardPieceProps {
     type: BoardPieceType;
+    rollNumber: number | null;
 }
 
 const BoardPieceBackground: React.FC<{ color: string }> = ({ color }) => {

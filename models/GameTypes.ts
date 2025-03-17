@@ -23,10 +23,25 @@ export const BoardPieceData: Record<BoardPieceType, BoardPieceInfo> = {
 export interface BoardPieceState {
     type: BoardPieceType;
     rollNumber: number | null; // null if desert
-    roads: boolean[]; // 0-5 clockwise from top
+}
+
+
+//3x+1 derives the number of rows/cols in the board
+export interface Coordiantes {
+    xVert: number;
+    yVert: number;
+}
+
+export interface SettlementState {
+    location: Coordiantes,
+}
+
+export interface RoadState {
+    start: Coordiantes,
+    end: Coordiantes
 }
 
 export interface GameState {
-    board: [],
-    players: [],
+    board: BoardPieceState[][],
+    settlements: SettlementState[]
 }

@@ -1,18 +1,18 @@
-import { BoardPieceType } from "@/models/GameTypes";
+import { BoardPieceType, GameState } from "@/models/GameTypes";
 import BoardPiece from "./Board/BoardPiece";
 
 interface CatanBoardProps {
-	board: BoardPieceType[][];
+	gameState: GameState;
 }
 
-const CatanBoard: React.FC<CatanBoardProps> = ({ board }) => {
+const CatanBoard: React.FC<CatanBoardProps> = ({ gameState }) => {
 	return (
 		<div>
-			{board.map((row, i) => (
+			{gameState.board.map((row, i) => (
 				<div key={i} className="flex justify-center">
 					{row.map((piece, j) => (
 						<div key={j} className="" style={{ position: "relative", bottom: i * 13, paddingRight: 10 }}>
-							<BoardPiece type={piece} />
+							<BoardPiece type={piece.type} rollNumber={piece.rollNumber} />
 						</div>
 					))}
 				</div>
