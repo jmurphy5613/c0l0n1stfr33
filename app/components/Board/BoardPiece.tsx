@@ -23,8 +23,9 @@ const BoardPieceBackground: React.FC<{ color: string }> = ({ color }) => {
 };
 
 const BoardPiece: React.FC<BoardPieceProps> = ({ type }) => {
+
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
             <BoardPieceBackground color={BoardPieceData[type].color} />
         </div>
     )

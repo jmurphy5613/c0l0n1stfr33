@@ -43,5 +43,4 @@ export interface RoadState {
 
 export interface GameState {
     board: BoardPieceState[][],
-    settlements: SettlementState[]
 }
